@@ -1,26 +1,32 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { Provider as PaperProvider } from "react-native-paper";
-import { StyleSheet, Text, View } from "react-native";
-import LoggedInScreen from "./src/screens/LoggedInScreen";
+// Providers
+import {
+  Provider as PaperProvider,
+  DefaultTheme as DefaultPaperTheme,
+  Colors,
+} from "react-native-paper";
+import { AuthProvider } from "./src/context/auth";
+// Components
+import SplashScreenManager from "./src/SplashScreenManager";
+// Services
+import * as SplashScreen from "expo-splash-screen";
 
-export default function AppWithProviders() {
+SplashScreen.preventAutoHideAsync();
+
+const Theme = {
+  ...DefaultPaperTheme,
+  colors: {
+    ...DefaultPaperTheme.colors,
+    accent: Colors.purple900,
+  },
+};
+
+export default function App() {
   return (
-    <PaperProvider>
-      <App />
-    </PaperProvider>
+    <AuthProvider>
+      <PaperProvider theme={Theme}>
+        <SplashScreenManager />
+      </PaperProvider>
+    </AuthProvider>
   );
 }
-
-function App() {
-  return <LoggedInScreen />;
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

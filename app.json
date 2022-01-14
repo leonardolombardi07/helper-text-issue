@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "teacher-evaluation",
-    "slug": "teacher-evaluation",
+    "name": "MAALTA Blockchain Parking",
+    "slug": "maalta-blockchain-parking",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/Logo/Logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/Logo/LogoNoBackground.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f6f6f6"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,16 +17,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }
